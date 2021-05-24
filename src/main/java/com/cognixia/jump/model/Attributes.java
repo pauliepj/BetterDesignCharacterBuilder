@@ -11,7 +11,8 @@ public class Attributes {
 	private Integer characterId;
 	@Column(name="charisma")
 	private Integer charisma;
-	
+	@Column(name="chaPointCost")
+	private Integer chaPointCost;
 	@Column(name="strength")
 	private Integer strength;
 	@Column(name="strPointCost")
@@ -43,6 +44,15 @@ public class Attributes {
 	}
 	public void setCharisma(Integer charisma) {
 		this.charisma = charisma;
+	}
+	
+	
+	
+	public Integer getChaPointCost() {
+		return chaPointCost;
+	}
+	public void setChaPointCost(Integer chaPointCost) {
+		this.chaPointCost = chaPointCost;
 	}
 	public Integer getStrength() {
 		return strength;
@@ -104,12 +114,13 @@ public class Attributes {
 	public void setDexPointCost(Integer dexPointCost) {
 		this.dexPointCost = dexPointCost;
 	}
-	public Attributes(Integer characterId, Integer charisma, Integer strength, Integer strPointCost, Integer wisdom,
-			Integer wisPointCost, Integer constitution, Integer conPointCost, Integer intelligence,
-			Integer intPointCost, Integer dexterity, Integer dexPointCost) {
+	public Attributes(Integer characterId, Integer charisma, Integer chaPointCost, Integer strength,
+			Integer strPointCost, Integer wisdom, Integer wisPointCost, Integer constitution, Integer conPointCost,
+			Integer intelligence, Integer intPointCost, Integer dexterity, Integer dexPointCost) {
 		super();
 		this.characterId = characterId;
 		this.charisma = charisma;
+		this.chaPointCost = chaPointCost;
 		this.strength = strength;
 		this.strPointCost = strPointCost;
 		this.wisdom = wisdom;
@@ -123,12 +134,12 @@ public class Attributes {
 	}
 	@Override
 	public String toString() {
-		return "Attribute [characterId=" + characterId + ", charisma=" + charisma + ", strength=" + strength
-				+ ", strPointCost=" + strPointCost + ", wisdom=" + wisdom + ", wisPointCost=" + wisPointCost
-				+ ", constitution=" + constitution + ", conPointCost=" + conPointCost + ", intelligence=" + intelligence
-				+ ", intPointCost=" + intPointCost + ", dexterity=" + dexterity + ", dexPointCost=" + dexPointCost
-				+ "]";
+		return "Attributes [characterId=" + characterId + ", charisma=" + charisma + ", chaPointCost=" + chaPointCost
+				+ ", strength=" + strength + ", strPointCost=" + strPointCost + ", wisdom=" + wisdom + ", wisPointCost="
+				+ wisPointCost + ", constitution=" + constitution + ", conPointCost=" + conPointCost + ", intelligence="
+				+ intelligence + ", intPointCost=" + intPointCost + ", dexterity=" + dexterity + ", dexPointCost="
+				+ dexPointCost + "]";
 	}
-	
+
 	
 }

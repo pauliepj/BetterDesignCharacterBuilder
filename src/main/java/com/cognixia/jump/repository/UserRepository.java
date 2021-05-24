@@ -9,7 +9,6 @@ public interface UserRepository extends JpaRepository<User, Integer>{
 
 	
 	User findUsersByUsername(String userName);
-	
 	User findUserByPassword(String password);
 	
 	@Query(value = "SELECT admin FROM user WHERE userName = :userName", nativeQuery = true)

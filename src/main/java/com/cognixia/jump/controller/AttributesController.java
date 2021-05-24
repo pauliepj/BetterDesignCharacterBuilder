@@ -75,5 +75,6 @@ public class AttributesController {
 	
 //-----------------------DELETE------------------------
 	//I don't currently see a need to delete the attributes... but maybe there is? to be seen later on I guess
-	
+	//possibly if a character is deleted from the database, then this method will need to be called,
+	//but that should be in the character controller.
 }
