@@ -41,9 +41,9 @@ public class UserController {
 		 return userRepo.findById(Integer.parseInt(id));
 	}
 	
-	@GetMapping(value="/user/{userName}//admin/")
-	public boolean isAdmin(@PathVariable String userName) {
-		if(userRepo.isAdmin(userName)) {
+	@GetMapping(value="/user/{userId}/admin/")
+	public boolean isAdmin(@PathVariable String userId) {
+		if(userRepo.isAdmin(Integer.parseInt(userId))) {
 			return true;
 		}
 		return false;

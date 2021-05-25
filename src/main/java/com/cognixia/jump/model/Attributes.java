@@ -33,6 +33,7 @@ public class Attributes {
 	private Integer dexterity;
 	@Column(name="dexPointCost")
 	private Integer dexPointCost;
+	
 	public Integer getCharacterId() {
 		return characterId;
 	}
