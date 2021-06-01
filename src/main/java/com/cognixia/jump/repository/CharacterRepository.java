@@ -12,7 +12,7 @@ public interface CharacterRepository extends JpaRepository<CharacterClass, Integ
 	
 	List<CharacterClass> findByUserId(Integer userId);
 	
-	
+	List<CharacterClass> findAll();
 	
 	CharacterClass findByCharacterName(String characterName);
 	

@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.cognixia.jump.model.Attributes;
 import com.cognixia.jump.repository.AttributeRepository;
 
-@CrossOrigin
+@CrossOrigin(origins = { "http://localhost:3000", "http://localhost:4200" })
 @RestController
 public class AttributesController {
 	
@@ -31,7 +31,7 @@ public class AttributesController {
 
 //------------------------READ---------------------------
 	
-	@GetMapping(value="/attributes/{characterId")
+	@GetMapping(value="/attributes/{characterId}")
 	public Attributes getAttributes(@PathVariable String characterId) {
 		return aRepo.findByCharacterId(Integer.parseInt(characterId));
 	}
@@ -72,7 +72,7 @@ public class AttributesController {
 	public void updateDexterity(@PathVariable String characterId, @PathVariable String value) {
 		aRepo.findByCharacterId(Integer.parseInt(characterId)).setDexterity(Integer.parseInt(value));
 	}
-	
+	//I need update methods for the expCost fields
 //-----------------------DELETE------------------------
 	//I don't currently see a need to delete the attributes... but maybe there is? to be seen later on I guess
 	//possibly if a character is deleted from the database, then this method will need to be called,

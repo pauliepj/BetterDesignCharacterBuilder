@@ -104,6 +104,10 @@ public class CharacterClass {
 				+ "]";
 	}
 
+	public CharacterClass() {
+		super();
+	}
+
 	
 	
 	

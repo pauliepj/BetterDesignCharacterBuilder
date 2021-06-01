@@ -2,11 +2,16 @@ package com.cognixia.jump.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.Table;
 @Table(name="Attributes")
 @Entity
 public class Attributes {
-
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="characterId")
 	private Integer characterId;
 	@Column(name="charisma")
@@ -140,6 +145,9 @@ public class Attributes {
 				+ wisPointCost + ", constitution=" + constitution + ", conPointCost=" + conPointCost + ", intelligence="
 				+ intelligence + ", intPointCost=" + intPointCost + ", dexterity=" + dexterity + ", dexPointCost="
 				+ dexPointCost + "]";
+	}
+	public Attributes() {
+		super();
 	}
 
 	

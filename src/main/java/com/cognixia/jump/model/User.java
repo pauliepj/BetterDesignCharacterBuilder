@@ -56,6 +56,9 @@ public class User implements Serializable{
 		this.password = password;
 		this.isAdmin = isAdmin;
 	}
+	public User() {
+		super();
+	}
 	
 	
 }

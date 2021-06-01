@@ -1,5 +1,6 @@
 package com.cognixia.jump.controller;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,10 +12,11 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.cognixia.jump.model.CharacterClass;
 import com.cognixia.jump.model.User;
 import com.cognixia.jump.repository.UserRepository;
 
-@CrossOrigin
+@CrossOrigin(origins = { "http://localhost:3000", "http://localhost:4200" })
 @RestController
 public class UserController {
 
@@ -29,10 +31,16 @@ public class UserController {
 	}
 
 //------------------------READ------------------------
+	@GetMapping(value="/character")
+	public List<User> getAllCharacters(){
+		return userRepo.findAll();
+		
+	}
+	
 	@GetMapping(value="/user/{userName}")
 	public User findByUsername(@PathVariable String userName)
 	{
-		return userRepo.findUsersByUsername(userName);
+		return userRepo.findUsersByUserName(userName);
 	}
 	
 	@GetMapping("/user/id/{id}")
