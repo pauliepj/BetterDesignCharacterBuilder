@@ -64,6 +64,11 @@ public class CharacterController {
 		}
 	return null;
 	}
+	
+	@GetMapping(value="/character/{userId}")
+	public List<CharacterClass> getCharactersByUserId(@PathVariable String userId){
+		return cRepo.findByUserId(Integer.parseInt(userId));
+	}
 
 //------------------------------UPDATE---------------------------
 	
